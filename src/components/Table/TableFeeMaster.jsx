@@ -104,7 +104,15 @@ class TableFeeMaster extends React.Component {
     saveHandler = () => {
         API.saveFeeMaster(this.state.formFeeMaster).then(res => {
             this.getFeeData()
-            this.resetInput()
+            this.setState({
+                isUpdate: false,
+                formFeeMaster: {
+                    fee_group_id: "",
+                    fee_type_id: "",
+                    due_date: "",
+                    amount: "",
+                }
+            })
             swalWithBootstrapButtons.fire(
                 'Success!',
                 'Fee Group has been saved',
