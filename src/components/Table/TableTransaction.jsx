@@ -178,7 +178,6 @@ class TableTransaction extends React.Component {
     // Fungsi untuk memanggil data
     getTransactionApi = () => {
         API.getTransaction().then(result => {
-            console.log(result)
             this.setState({
                 data: result
             })

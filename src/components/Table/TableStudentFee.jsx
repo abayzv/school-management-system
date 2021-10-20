@@ -102,7 +102,6 @@ class TableStudentFee extends React.Component {
                 description: this.state.formCollect.description
             }
         }).then(response => {
-            console.log(response)
             swalWithBootstrapButtons.fire(
                 'Success!',
                 'Fee has been colected.',
@@ -111,7 +110,6 @@ class TableStudentFee extends React.Component {
             this.getStudentFeeApi();
             this.closeModal();
         }).catch(error => {
-            console.log(error)
         });
     }
 
