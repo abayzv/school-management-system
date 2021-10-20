@@ -94,7 +94,7 @@ class TableStudentFee extends React.Component {
     collectFee = () => {
         axios({
             method: "post",
-            url: `http://localhost:8000/api/colectfee`,
+            url: `https://anifox.posapp.id/api/colectfee`,
             data: {
                 fee_student_id: this.props.match.params.id,
                 fee_master_id: this.state.fee_master_id,
@@ -155,7 +155,7 @@ class TableStudentFee extends React.Component {
         this.setState({
             isUpdate: true
         })
-        axios.get(`http://localhost:8000/api/classroom/${datas}`).then(res => {
+        axios.get(`https://anifox.posapp.id/api/classroom/${datas}`).then(res => {
             this.setState({
                 formCollect: res.data.data
             })

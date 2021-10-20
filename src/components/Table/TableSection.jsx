@@ -116,7 +116,7 @@ class TableSection extends React.Component {
         this.setState({
             isUpdate: true
         })
-        axios.get(`http://localhost:8000/api/section/${datas}`).then(res => {
+        axios.get(`https://anifox.posapp.id/api/section/${datas}`).then(res => {
             this.setState({
                 formSection: res.data.data
             })

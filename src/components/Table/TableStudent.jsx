@@ -152,7 +152,7 @@ class TableStudent extends React.Component {
         this.setState({
             isUpdate: true
         })
-        axios.get(`http://localhost:8000/api/student/${datas}`).then(res => {
+        axios.get(`https://anifox.posapp.id/api/student/${datas}`).then(res => {
             this.setState({
                 formStudent: res.data.data
             })
@@ -167,7 +167,7 @@ class TableStudent extends React.Component {
                     this.openModal()
                     this.handleUpdate(row.id)
                 }}><i class="bx bxs-edit"></i></a>
-                <a data-tip data-for='ktp' href={"http://localhost:8000/kartupelajar/" + row.id} target="_blank" rel="noreferrer noopener" class="ms-3"><i class="bx bxs-credit-card-front"></i></a>
+                <a data-tip data-for='ktp' href={"https://anifox.posapp.id/kartupelajar/" + row.id} target="_blank" rel="noreferrer noopener" class="ms-3"><i class="bx bxs-credit-card-front"></i></a>
                 <a data-tip data-for='deletes' href="#" class="ms-3" onClick={() => {
                     this.handleRemove(row.id)
                 }}><i class="bx bxs-trash"></i></a>
@@ -198,7 +198,7 @@ class TableStudent extends React.Component {
             if (result.isConfirmed) {
                 axios({
                     method: "delete",
-                    url: `http://localhost:8000/api/student/${id}`
+                    url: `https://anifox.posapp.id/api/student/${id}`
                 }).then((res) => {
                     this.getStudentApi();
                     swalWithBootstrapButtons.fire(

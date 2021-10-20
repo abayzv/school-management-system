@@ -103,7 +103,7 @@ class SearchStudentClassRoom extends React.Component {
             if (result.isConfirmed) {
                 axios({
                     method: "delete",
-                    url: `http://localhost:8000/api/removestudentclass`,
+                    url: `https://anifox.posapp.id/api/removestudentclass`,
                     data: {
                         student_id: props
                     }
@@ -141,7 +141,7 @@ class SearchStudentClassRoom extends React.Component {
 
     // Fungsi untuk memanggil data
     getStudentClassRoom = () => {
-        axios.get(`http://localhost:8000/api/searchclassroom?class=${this.state.search.classId}&section=${this.state.search.sectionId}}`).then((result) => {
+        axios.get(`https://anifox.posapp.id/api/searchclassroom?class=${this.state.search.classId}&section=${this.state.search.sectionId}}`).then((result) => {
             if (result.data.data !== 'undefined' && result.data.data.length > 0) {
                 this.setState({
                     data: result.data.data

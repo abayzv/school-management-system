@@ -123,7 +123,7 @@ class TableFeeType extends React.Component {
         this.setState({
             isUpdate: true
         })
-        axios.get(`http://localhost:8000/api/feetype/${datas}`).then(res => {
+        axios.get(`https://anifox.posapp.id/api/feetype/${datas}`).then(res => {
             this.setState({
                 formFeeGroup: res.data.data
             })

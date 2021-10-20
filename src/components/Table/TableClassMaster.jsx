@@ -116,7 +116,7 @@ class TableClassMaster extends React.Component {
         this.setState({
             isUpdate: true
         })
-        axios.get(`http://localhost:8000/api/classroom/${datas}`).then(res => {
+        axios.get(`https://anifox.posapp.id/api/classroom/${datas}`).then(res => {
             this.setState({
                 formClassMaster: res.data.data
             })

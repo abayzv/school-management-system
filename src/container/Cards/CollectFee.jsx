@@ -83,7 +83,7 @@ class CollectFee extends React.Component {
     assignStudent = (datas) => {
         axios({
             method: "post",
-            url: `http://localhost:8000/api/assignstudent`,
+            url: `https://anifox.posapp.id/api/assignstudent`,
             data: {
                 student_id: datas,
                 feeid: this.props.match.params.id
@@ -101,7 +101,7 @@ class CollectFee extends React.Component {
     collect = (datas) => {
         axios({
             method: "post",
-            url: `http://localhost:8000/api/collect`,
+            url: `https://anifox.posapp.id/api/collect`,
             data: {
                 student_id: datas
             }
@@ -158,7 +158,7 @@ class CollectFee extends React.Component {
 
     // Fungsi untuk memanggil data
     getStudentClassRoom = () => {
-        axios.get(`http://localhost:8000/api/searchclassroom?class=${this.state.search.classId}&section=${this.state.search.sectionId}}`).then((result) => {
+        axios.get(`https://anifox.posapp.id/api/searchclassroom?class=${this.state.search.classId}&section=${this.state.search.sectionId}}`).then((result) => {
             if (result.data.data !== 'undefined' && result.data.data.length > 0) {
                 this.setState({
                     data: result.data.data

@@ -118,7 +118,7 @@ class TableClassGroup extends React.Component {
             if (result.isConfirmed) {
                 axios({
                     method: "delete",
-                    url: `http://localhost:8000/api/removestudentclass`,
+                    url: `https://anifox.posapp.id/api/removestudentclass`,
                     data: {
                         student_id: props
                     }
@@ -161,7 +161,7 @@ class TableClassGroup extends React.Component {
     saveHandler = () => {
         axios({
             method: "post",
-            url: `http://localhost:8000/api/savegroup`,
+            url: `https://anifox.posapp.id/api/savegroup`,
             data: this.state.formClassGroup
         }).then(res => {
             this.getClassGroupApi()
@@ -182,7 +182,7 @@ class TableClassGroup extends React.Component {
     handleAssign = (datas) => {
         axios({
             method: "post",
-            url: `http://localhost:8000/api/assignstudentclass`,
+            url: `https://anifox.posapp.id/api/assignstudentclass`,
             data: {
                 student_id: datas,
                 class_group_id: this.state.class_group_id
@@ -202,7 +202,7 @@ class TableClassGroup extends React.Component {
         this.setState({
             isUpdate: true
         })
-        axios.get(`http://localhost:8000/api/classgroup/${datas}`).then(res => {
+        axios.get(`https://anifox.posapp.id/api/classgroup/${datas}`).then(res => {
             this.setState({
                 formClassGroup: res.data.data
             })

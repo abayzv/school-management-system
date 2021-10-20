@@ -25,7 +25,7 @@ class TableFeeGroup extends React.Component {
     constructor() {
         super();
         this.state = {
-            visible : false,
+            visible: false,
             column: [
                 {
                     dataField: 'id',
@@ -59,7 +59,7 @@ class TableFeeGroup extends React.Component {
     // Funsi untuk membuka Modal
     openModal = () => {
         this.setState({
-            visible : true
+            visible: true
         });
     }
 
@@ -67,7 +67,7 @@ class TableFeeGroup extends React.Component {
 
     closeModal = () => {
         this.setState({
-            visible : false
+            visible: false
         });
     }
 
@@ -77,7 +77,7 @@ class TableFeeGroup extends React.Component {
             isUpdate: false,
             formFeeGroup: {
                 name: "",
-                description:"",
+                description: "",
             }
         })
         this.openModal()
@@ -85,7 +85,7 @@ class TableFeeGroup extends React.Component {
 
     // Fungsi untuk update form
     handleFormChange = (event) => {
-        const formFeeGroupNew = {...this.state.formFeeGroup}
+        const formFeeGroupNew = { ...this.state.formFeeGroup }
         formFeeGroupNew[event.target.id] = event.target.value
         this.setState({
             formFeeGroup: formFeeGroupNew
@@ -94,8 +94,8 @@ class TableFeeGroup extends React.Component {
 
     // Fungsi untuk Update & Save data melalui API
     saveHandler = () => {
-        if(this.state.isUpdate){
-            API.updateFeeGroup(this.state.formFeeGroup.id, this.state.formFeeGroup).then(res=>{
+        if (this.state.isUpdate) {
+            API.updateFeeGroup(this.state.formFeeGroup.id, this.state.formFeeGroup).then(res => {
                 this.getFeeGroupApi()
                 this.resetInput()
                 swalWithBootstrapButtons.fire(
@@ -104,8 +104,8 @@ class TableFeeGroup extends React.Component {
                     'success'
                 )
             })
-        }else{
-            API.saveFeeGroup(this.state.formFeeGroup).then(res=>{
+        } else {
+            API.saveFeeGroup(this.state.formFeeGroup).then(res => {
                 this.getFeeGroupApi()
                 this.resetInput()
                 swalWithBootstrapButtons.fire(
@@ -114,7 +114,7 @@ class TableFeeGroup extends React.Component {
                     'success'
                 )
             })
-            
+
         }
     }
 
@@ -123,7 +123,7 @@ class TableFeeGroup extends React.Component {
         this.setState({
             isUpdate: true
         })
-        axios.get(`http://localhost:8000/api/feegroup/${datas}`).then(res =>{
+        axios.get(`https://anifox.posapp.id/api/feegroup/${datas}`).then(res => {
             this.setState({
                 formFeeGroup: res.data.data
             })
@@ -189,62 +189,62 @@ class TableFeeGroup extends React.Component {
 
     render() {
         return <div className="row">
-                    <div className="col-xl-12">
-                    <div className="card">
-                        <div className="card-body">
+            <div className="col-xl-12">
+                <div className="card">
+                    <div className="card-body">
                         {/* Datatable */}
                         <ToolkitProvider
                             keyField="id"
-                            data={ this.state.data }
-                            columns={ this.state.column }
+                            data={this.state.data}
+                            columns={this.state.column}
                             search
-                            >
+                        >
                             {
                                 props =>
-                                <div>
-                                <div class="d-lg-flex align-items-center mb-4 gap-3">
-                                    <SearchBar { ...props.searchProps } />
-                                <div class="ms-auto"><button class="btn btn-primary radius-30 mt-2 mt-lg-0" onClick={this.resetInput}><i class="bx bxs-plus-square"></i>Add Fee Group</button></div>
-                                </div>
-                                <BootstrapTable { ...props.baseProps } pagination={paginationFactory()} />
-                                </div>
+                                    <div>
+                                        <div class="d-lg-flex align-items-center mb-4 gap-3">
+                                            <SearchBar {...props.searchProps} />
+                                            <div class="ms-auto"><button class="btn btn-primary radius-30 mt-2 mt-lg-0" onClick={this.resetInput}><i class="bx bxs-plus-square"></i>Add Fee Group</button></div>
+                                        </div>
+                                        <BootstrapTable {...props.baseProps} pagination={paginationFactory()} />
+                                    </div>
                             }
                         </ToolkitProvider>
                         {/* End Data Table */}
-                        </div>
                     </div>
-                    </div>
+                </div>
+            </div>
 
-                    {/* MODAL */}
-                    
-                    <Modal show={this.state.visible} onHide={this.closeModal}>
-                    <Modal.Header closeButton>
+            {/* MODAL */}
+
+            <Modal show={this.state.visible} onHide={this.closeModal}>
+                <Modal.Header closeButton>
                     <Modal.Title>Add Fee Group</Modal.Title>
-                    </Modal.Header>
-                    <Modal.Body>
+                </Modal.Header>
+                <Modal.Body>
                     <div class="row g-3">
                         <div class="col-12">
                             <div class="form-group">
                                 <label htmlFor="name">Name</label>
-                                <input value={this.state.formFeeGroup.name} type="text" class="form-control" id="name" placeholder="Input Fee Group Name" onChange={this.handleFormChange} /> 
+                                <input value={this.state.formFeeGroup.name} type="text" class="form-control" id="name" placeholder="Input Fee Group Name" onChange={this.handleFormChange} />
                             </div>
                         </div>
                         <div class="col-12">
                             <div class="form-group">
                                 <label htmlFor="name">Address</label>
-                                <textarea value={this.state.formFeeGroup.description} class="form-control"  id="description" cols="30" rows="3" onChange={this.handleFormChange}></textarea>
+                                <textarea value={this.state.formFeeGroup.description} class="form-control" id="description" cols="30" rows="3" onChange={this.handleFormChange}></textarea>
                             </div>
                         </div>
                     </div>
-                    </Modal.Body>
-                    <Modal.Footer>
+                </Modal.Body>
+                <Modal.Footer>
                     <Button variant="secondary" onClick={this.closeModal}>Close</Button>
                     <button type="submit" class="btn btn-primary px-5" onClick={this.saveHandler}>Save</button>
-                    </Modal.Footer>
-                    </Modal>
+                </Modal.Footer>
+            </Modal>
 
-                    {/* End Modal */}
-                </div>
+            {/* End Modal */}
+        </div>
     }
 }
 

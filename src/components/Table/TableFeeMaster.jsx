@@ -118,7 +118,7 @@ class TableFeeMaster extends React.Component {
         this.setState({
             isUpdate: true
         })
-        axios.get(`http://localhost:8000/api/feetype/${datas}`).then(res => {
+        axios.get(`https://anifox.posapp.id/api/feetype/${datas}`).then(res => {
             this.setState({
                 formFeeMaster: res.data.data
             })
@@ -194,7 +194,7 @@ class TableFeeMaster extends React.Component {
 
     // Fungsi untuk memanggil data
     getFeeData = () => {
-        axios.get(`http://localhost:8000/api/updatedatamaster`).then(res => {
+        axios.get(`https://anifox.posapp.id/api/updatedatamaster`).then(res => {
             this.setState({
                 data: res.data
             })
