@@ -33,7 +33,7 @@ class TableFeeType extends React.Component {
                 },
                 {
                     dataField: 'name',
-                    text: 'Fee Group',
+                    text: 'Fee Type',
                     sort: true
                 },
                 {
@@ -173,8 +173,8 @@ class TableFeeType extends React.Component {
     }
 
     // Fungsi untuk memanggil data
-    getFeeGroupApi = () => {
-        API.getFeeGroup().then(result => {
+    getFeeTypeApi = () => {
+        API.getFeeType().then(result => {
             this.setState({
                 data: result
             })
@@ -183,7 +183,7 @@ class TableFeeType extends React.Component {
 
     // Fungsi yang di render ketika pertama kali load
     componentDidMount() {
-        this.getFeeGroupApi();
+        this.getFeeTypeApi();
     }
 
 
@@ -204,7 +204,7 @@ class TableFeeType extends React.Component {
                                     <div>
                                         <div class="d-lg-flex align-items-center mb-4 gap-3">
                                             <SearchBar {...props.searchProps} />
-                                            <div class="ms-auto"><button class="btn btn-primary radius-30 mt-2 mt-lg-0" onClick={this.resetInput}><i class="bx bxs-plus-square"></i>Add Fee Group</button></div>
+                                            <div class="ms-auto"><button class="btn btn-primary radius-30 mt-2 mt-lg-0" onClick={this.resetInput}><i class="bx bxs-plus-square"></i>Add Fee Type</button></div>
                                         </div>
                                         <BootstrapTable {...props.baseProps} pagination={paginationFactory()} />
                                     </div>
@@ -219,7 +219,7 @@ class TableFeeType extends React.Component {
 
             <Modal show={this.state.visible} onHide={this.closeModal}>
                 <Modal.Header closeButton>
-                    <Modal.Title>Add Fee Group</Modal.Title>
+                    <Modal.Title>Add Fee Type</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                     <div class="row g-3">
