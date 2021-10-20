@@ -169,7 +169,7 @@ class TableStudent extends React.Component {
                 }}><i class="bx bxs-edit"></i></a>
                 <a data-tip data-for='ktp' href={"https://anifox.posapp.id/kartupelajar/" + row.id} target="_blank" rel="noreferrer noopener" class="ms-3"><i class="bx bxs-credit-card-front"></i></a>
                 <a data-tip data-for='deletes' href="#" class="ms-3" onClick={() => {
-                    this.handleRemove(row.id)
+                    // this.handleRemove(row.id)
                 }}><i class="bx bxs-trash"></i></a>
                 <ReactTooltip key={row.id} id='edits'>
                     <span>Edit Student</span>
