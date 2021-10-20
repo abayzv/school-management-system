@@ -1,0 +1,29 @@
+.youtube-wraper{
+    padding: 10px;
+    background-color: #0f0f0f;
+    display: inline-block;
+    vertical-align: text-top;
+}
+
+.wraper{
+    background-color: #0f0f0f;
+}
+
+.youtube-thumbnail{
+    width: 210px;
+}
+
+.youtube-title{
+    color: white;
+    margin-top: 0px;
+    font-weight: bold;
+    font-size: 14px;
+    width: 210px;
+    word-wrap: break-word;
+}
+
+.youtube-description{
+    color: #AAAAAA;
+    margin-top: -10px;
+    font-size: 12px;
+}
