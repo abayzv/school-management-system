@@ -1,7 +1,7 @@
 import axios from "axios";
 
 // API ROOT URL
-const RootPath = "http://localhost:8000";
+const RootPath = "https://anifox.posapp.id";
 
 const Get = (path) => {
   const promise = new Promise((resolve, reject) => {
