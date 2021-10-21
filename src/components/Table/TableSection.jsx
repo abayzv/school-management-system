@@ -132,7 +132,7 @@ class TableSection extends React.Component {
                     this.handleUpdate(row.id)
                 }}><i class="bx bxs-edit"></i></a>
                 <a href="#" class="ms-3" onClick={() => {
-                    // this.handleRemove(row.id)
+                    this.handleRemove(row.id)
                 }}><i class="bx bxs-trash"></i></a>
             </div>
         )
