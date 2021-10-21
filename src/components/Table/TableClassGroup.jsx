@@ -249,7 +249,7 @@ class TableClassGroup extends React.Component {
                     this.assignStudentClass(row.id, row.class_name, row.section)
                 }}>Assign</button>
                 <button class="btn btn-sm btn-danger" onClick={() => {
-                    // this.handleRemove(row.id)
+                    this.handleRemove(row.id)
                 }}>Remove</button>
             </div>
         )
