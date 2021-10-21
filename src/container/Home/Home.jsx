@@ -24,6 +24,19 @@ export default function App() {
     <Router>
       <Header />
       <Sidenav />
+      <div className="alertss">
+        <div class="alert alert-info border-0 bg-info alert-dismissible fade show py-2">
+          <div class="d-flex align-items-center">
+            <div class="font-35 text-dark"><i class='bx bx-info-square'></i>
+            </div>
+            <div class="ms-3">
+              <h6 class="mb-0 text-dark">Info</h6>
+              <div class="text-dark">Fungsi deletenya saya matikan dulu ya gaes, biar ga ada yang iseng hehe ^^</div>
+            </div>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+      </div>
       <Fragment>
         {/* Root Route */}
         <Route path="/" exact component={Dashboard} />
